@@ -9,7 +9,8 @@ class VendaVeiculoMapper {
             vendaVeiculo.id,
             vendaVeiculo.idVeiculo,
             vendaVeiculo.codigoPagamento,
-            vendaVeiculo.valor
+            vendaVeiculo.valor,
+            vendaVeiculo.status
         )
     }
 
@@ -18,7 +19,8 @@ class VendaVeiculoMapper {
             vendaVeiculoEntity.id,
             vendaVeiculoEntity.idVeiculo,
             vendaVeiculoEntity.codigoPagamento,
-            vendaVeiculoEntity.valor
+            vendaVeiculoEntity.valor,
+            vendaVeiculoEntity.status
         )
     }
 }

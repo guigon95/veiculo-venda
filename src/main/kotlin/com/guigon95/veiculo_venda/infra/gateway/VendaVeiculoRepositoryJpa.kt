@@ -17,4 +17,8 @@ class VendaVeiculoRepositoryJpa(
     override fun gerarCodigoPagamento(): UUID {
         return UUID.randomUUID()
     }
+
+    override fun findByCodigoPagamento(codigoPagamento: UUID): VendaVeiculo {
+        return mapper.toVendaVeiculo(vendaVeiculoRepository.findByCodigoPagamento(codigoPagamento))
+    }
 }

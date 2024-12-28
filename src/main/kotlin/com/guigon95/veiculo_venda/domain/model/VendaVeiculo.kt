@@ -9,6 +9,5 @@ data class VendaVeiculo(
     val idVeiculo: Long,
     var codigoPagamento: UUID?,
     val valor: BigDecimal,
-    val staus: StatusPagamento
-) {
-}
+    var status: StatusPagamento
+)

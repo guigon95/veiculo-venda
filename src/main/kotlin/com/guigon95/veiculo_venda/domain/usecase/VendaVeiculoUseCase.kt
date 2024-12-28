@@ -6,4 +6,5 @@ import java.util.UUID
 interface VendaVeiculoUseCase {
     fun salvar(vendaVeiculo: VendaVeiculo): VendaVeiculo
     fun gerarCodigoPagamento(): UUID
+    fun processaPagamento(codigoPagamento: UUID): VendaVeiculo
 }

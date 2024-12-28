@@ -7,7 +7,7 @@ import java.util.*
 class VendaVeiculoResponse(
     val id: Long?,
     val idVeiculo: Long,
-    val codigoPagamento: UUID,
+    val codigoPagamento: UUID?,
     val valor: BigDecimal
 ) {
     companion object {

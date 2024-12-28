@@ -15,7 +15,7 @@ class VendaVeiculoRequest(
             idVeiculo = idVeiculo,
             codigoPagamento = null,
             valor = valor,
-            staus = StatusPagamento.PROCESSANDO
+            status = StatusPagamento.PROCESSANDO
         )
     }
 }

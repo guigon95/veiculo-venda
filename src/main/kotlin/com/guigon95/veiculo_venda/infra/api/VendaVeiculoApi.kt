@@ -5,6 +5,7 @@ import com.guigon95.veiculo_venda.infra.controller.dto.VendaVeiculoRequest
 import com.guigon95.veiculo_venda.infra.controller.dto.VendaVeiculoResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -22,6 +23,13 @@ class VendaVeiculoApi(
     ): ResponseEntity<VendaVeiculoResponse> {
         return ResponseEntity.status(HttpStatus.CREATED)
             .body(vendaVeiculoController.salvar(vendaVeiculoRequest))
+    }
+
+    @PostMapping("/webhook/{codigoPagamento}")
+    fun webHook(
+        @PathVariable codigoPagamento: String
+    ): ResponseEntity<Any> {
+        return ResponseEntity.status(HttpStatus.OK).body(vendaVeiculoController.processaPagamento(codigoPagamento))
     }
 
 }
