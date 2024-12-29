@@ -14,4 +14,20 @@ class VeiculoFeignClient(
 
         return null
     }
+
+    override fun updateSituacaoVeiculo(id: Long): Veiculo? {
+        veiculoFeign.updateSituacao(id)?.let {
+            return it.toVeiculo()
+        }
+
+        return null
+    }
+
+    override fun reservarVeiculo(idVeiculo: Long): Veiculo? {
+        veiculoFeign.reservarVeiculo(idVeiculo)?.let {
+            return it.toVeiculo()
+        }
+
+        return null
+    }
 }

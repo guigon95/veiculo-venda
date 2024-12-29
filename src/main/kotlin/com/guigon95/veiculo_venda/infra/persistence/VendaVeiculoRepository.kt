@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 import java.util.UUID
 
 interface VendaVeiculoRepository : JpaRepository<VendaVeiculoEntity, Long> {
-    fun findByCodigoPagamento(codigoPagamento: UUID): VendaVeiculoEntity
+    fun findByCodigoPagamento(codigoPagamento: UUID): VendaVeiculoEntity?
+    fun findByIdVeiculo(idVeiculo: Long): VendaVeiculoEntity?
 }

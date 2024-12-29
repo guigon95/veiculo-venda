@@ -19,6 +19,17 @@ class VendaVeiculoRepositoryJpa(
     }
 
     override fun findByCodigoPagamento(codigoPagamento: UUID): VendaVeiculo {
-        return mapper.toVendaVeiculo(vendaVeiculoRepository.findByCodigoPagamento(codigoPagamento))
+        val vendaVeiculo = vendaVeiculoRepository.findByCodigoPagamento(codigoPagamento)
+            ?: throw RuntimeException("Venda não encontrada")
+        return mapper.toVendaVeiculo(vendaVeiculo)
+    }
+
+    override fun findByIdVeiculo(idVeiculo: Long): VendaVeiculo? {
+        val vendaVeiculo = vendaVeiculoRepository.findByIdVeiculo(idVeiculo)
+
+        if (vendaVeiculo != null)
+            return mapper.toVendaVeiculo(vendaVeiculo)
+
+        return null
     }
 }
