@@ -5,7 +5,6 @@ import com.guigon95.veiculo_venda.domain.model.VendaVeiculo
 import java.math.BigDecimal
 
 class VendaVeiculoRequest(
-    val id: Long?,
     val idVeiculo: Long,
     val valor: BigDecimal
 ) {

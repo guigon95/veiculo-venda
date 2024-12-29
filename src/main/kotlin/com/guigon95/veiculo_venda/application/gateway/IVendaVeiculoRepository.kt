@@ -7,4 +7,5 @@ interface IVendaVeiculoRepository {
     fun salvar(vendaVeiculo: VendaVeiculo): VendaVeiculo
     fun gerarCodigoPagamento(): UUID
     fun findByCodigoPagamento(codigoPagamento: UUID): VendaVeiculo
+    fun findByIdVeiculo(idVeiculo: Long): VendaVeiculo?
 }
