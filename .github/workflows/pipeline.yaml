@@ -92,8 +92,8 @@ jobs:
       - name: Download task definition
         run: |
           set -e
-          echo "Describing task definition: veiculo-venda-task"
-          aws ecs describe-task-definition --task-definition veiculo-venda-task:1 --query taskDefinition > task-definition.json
+          echo "Describing task definition: ${{ secrets.APP_NAME }}-task"
+          aws ecs describe-task-definition --task-definition ${{ secrets.APP_NAME }}-task:1 --query taskDefinition > task-definition.json
           if [ $? -ne 0 ]; then
             echo "Error: Unable to describe task definition ${{ secrets.APP_NAME }}-task"
             exit 1
