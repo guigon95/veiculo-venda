@@ -31,7 +31,7 @@ class VendaVeiculoApi(
     fun webHook(
         @PathVariable codigoPagamento: String
     ): ResponseEntity<Any> {
-        return ResponseEntity.status(HttpStatus.OK).body(vendaVeiculoController.processaPagamento(codigoPagamento))
+        return ResponseEntity.status(HttpStatus.OK).body(vendaVeiculoController.pro1    cessaPagamento(codigoPagamento))
     }
 
 }
